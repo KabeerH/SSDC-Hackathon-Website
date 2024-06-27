@@ -1,0 +1,25 @@
+/*Animation for a slide in bar when you hover a link*/
+.link {
+    position: relative;
+    color: darkred;
+    font-weight: 800;
+}
+
+.link:hover {
+    color: red;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: red;
+    transition: all 0.3s ease-in-out;
+}
+
+.link:hover::after {
+    width: 100%;
+}

@@ -1,0 +1,19 @@
+/*Animation for a slide in bar when you hover a link*/
+.link {
+    position: relative;
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.link:hover::after {
+    width: 100%;
+}
