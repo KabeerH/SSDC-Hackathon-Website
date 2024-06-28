@@ -15,14 +15,16 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div>
-            <a href='/'>
-              <Image
-                src='/logo.png'
-                width="150"
-                height="150"
-                className="text-lg text-black p-4 hover:text-red-700 transition-colors duration-200 rounded cursor-pointer" 
-              />
-            </a>
+              <Link legacyBehavior href="/">
+                <a>
+                  <Image
+                    src='/logo.png'
+                    width="150"
+                    height="150"
+                    className="text-lg text-black p-4 hover:text-red-700 transition-colors duration-200 rounded cursor-pointer" 
+                  />
+                </a>
+              </Link>
             </div>
             <div className="hidden md:block">
               <div className="text-sm text-white ml-10 space-x-6">

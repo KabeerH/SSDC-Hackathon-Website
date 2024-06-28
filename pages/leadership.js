@@ -1,4 +1,5 @@
 import {FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function () {
     return (
@@ -42,9 +43,10 @@ export default function () {
                     <p class="my-4 text-center text-md text-gray-500">Inspirational Quote</p>
                     <p class="my-4 text-center text-sm text-gray-500">Treasurer</p>
                     <div class="space-x-4 bg-gray-100 py-4 text-center">
-                        <a className='inline-block rounded-md' href="https://facebook.com" target="_blank"><FaLinkedin /></a>
-                        <a className='inline-block rounded-md' href="https://twitter.com" target="_blank"><FaTwitter /></a>
-                        <a className='inline-block rounded-md' href="https://instagram.com" target="_blank"><FaInstagram /></a>
+
+                        <Link legacyBehavior href="https://facebook.com"><a className='inline-block rounded-md' target="_blank"><FaLinkedin /></a></Link>
+                        <Link legacyBehavior href="https://twitter.com"><a className='inline-block rounded-md' target="_blank"><FaTwitter /></a></Link>
+                        <Link legacyBehavior href="https://instagram.com"><a className='inline-block rounded-md' target="_blank"><FaInstagram /></a></Link>
                     </div>
                 </div>
             </div>
