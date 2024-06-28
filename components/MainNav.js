@@ -8,6 +8,10 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
     <nav className="bg-red-800" style={{position:"sticky", top: 0, zIndex: 10000}}>
@@ -16,7 +20,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <div>
               <Link legacyBehavior href="/">
-                <a>
+                <a onClick={closeMenu}>
                   <Image
                     src='/logo.png'
                     width="150"
@@ -28,11 +32,11 @@ export default function Navbar() {
             </div>
             <div className="hidden md:block">
               <div className="text-sm text-white ml-10 space-x-6">
-                <Link legacyBehavior href="/"><a className={router.pathname === '/' ? styles.activeLink : styles.link}>Home</a></Link>
-                <Link legacyBehavior href="/about"><a className={router.pathname === '/about' ? styles.activeLink : styles.link}>About us</a></Link>
-                <Link legacyBehavior href="/leadership"><a className={router.pathname === '/leadership' ? styles.activeLink : styles.link}>Leadership team</a></Link>
-                <Link legacyBehavior href="/events"><a className={router.pathname === '/events' ? styles.activeLink : styles.link}>Events</a></Link>
-                <Link legacyBehavior href="/contact"><a className={router.pathname === '/contact' ? styles.activeLink : styles.link}>Contact us</a></Link>
+                <Link legacyBehavior href="/"><a onClick={closeMenu} className={router.pathname === '/' ? styles.activeLink : styles.link}>Home</a></Link>
+                <Link legacyBehavior href="/about"><a onClick={closeMenu} className={router.pathname === '/about' ? styles.activeLink : styles.link}>About us</a></Link>
+                <Link legacyBehavior href="/leadership"><a onClick={closeMenu} className={router.pathname === '/leadership' ? styles.activeLink : styles.link}>Leadership team</a></Link>
+                <Link legacyBehavior href="/events"><a onClick={closeMenu} className={router.pathname === '/events' ? styles.activeLink : styles.link}>Events</a></Link>
+                <Link legacyBehavior href="/contact"><a onClick={closeMenu} className={router.pathname === '/contact' ? styles.activeLink : styles.link}>Contact us</a></Link>
               </div>
             </div>
           </div>
@@ -55,19 +59,19 @@ export default function Navbar() {
       {isOpen && (
         <div className="text-white md:hidden">
           <div className="px-8 pt-2 pb-3 space-y-1 sm:px-15 text-sm">
-              <Link href='/' legacyBehavior><a className={router.pathname === '/' ? styles.activeLink : styles.link}>Home</a></Link>
+              <Link href='/' legacyBehavior><a onClick={closeMenu} className={router.pathname === '/' ? styles.activeLink : styles.link}>Home</a></Link>
             </div>
             <div className="px-8 pt-2 pb-3 space-y-1 sm:px-15 text-sm">
-              <Link href='/about' legacyBehavior><a className={router.pathname === '/about' ? styles.activeLink : styles.link}>About us</a></Link>
+              <Link href='/about' legacyBehavior><a onClick={closeMenu} className={router.pathname === '/about' ? styles.activeLink : styles.link}>About us</a></Link>
             </div>
             <div className="px-8 pt-2 pb-3 space-y-1 sm:px-15 text-sm">
-              <Link legacyBehavior href="/leadership"><a className={router.pathname === '/leadership' ? styles.activeLink : styles.link}>Leadership team</a></Link>
+              <Link legacyBehavior href="/leadership"><a onClick={closeMenu} className={router.pathname === '/leadership' ? styles.activeLink : styles.link}>Leadership team</a></Link>
             </div>
             <div className="px-8 pt-2 pb-3 space-y-1 sm:px-15 text-sm">
-              <Link legacyBehavior href="/events"><a className={router.pathname === '/events' ? styles.activeLink : styles.link}>Events</a></Link>
+              <Link legacyBehavior href="/events"><a onClick={closeMenu} className={router.pathname === '/events' ? styles.activeLink : styles.link}>Events</a></Link>
             </div>
             <div className="px-8 pt-2 pb-3 space-y-1 sm:px-15 text-sm">
-              <Link href='/contact' legacyBehavior><a className={router.pathname === '/contact' ? styles.activeLink : styles.link}>Contact us</a></Link>
+              <Link href='/contact' legacyBehavior><a onClick={closeMenu} className={router.pathname === '/contact' ? styles.activeLink : styles.link}>Contact us</a></Link>
             </div>
         </div>
       )}
