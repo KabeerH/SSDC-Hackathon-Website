@@ -39,8 +39,8 @@ export default function About() {
             </section>
             <div className="flex justify-center items-center mt-6 gap-40 mb-32">
                 <img className="rounded-full w-full h-auto md:w-48 md:h-48" src="working.png" alt="working image"/>
-                <img className="rounded-full w-full h-auto md:w-48 md:h-48" src="computer.png" alt="computer image"/>
-                <img className="rounded-full w-full h-auto md:w-48 md:h-48" src="community.png" alt="community image"/>
+                <img className="rounded-full w-full h-auto md:w-48 md:h-48 hidden sm:block" src="computer.png" alt="computer image"/>
+                <img className="rounded-full w-full h-auto md:w-48 md:h-48 hidden sm:block" src="community.png" alt="community image"/>
             </div>
 
         </main>
