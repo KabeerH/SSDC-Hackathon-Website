@@ -1,7 +1,7 @@
 import {FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import Link from 'next/link';
 
-export default function () {
+export default function leadership() {
     return (
         <>
             <div class="flex flex-col items-center justify-top min-h-screen bg-gray-200 px-4 pb-8">
