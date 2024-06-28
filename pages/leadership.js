@@ -3,8 +3,8 @@ import {FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 export default function () {
     return (
         <>
-        <div class="flex flex-col items-center justify-center min-h-screen bg-gray-200 px-4">
-            <h1 class="text-6xl font-bold text-gray-700 mb-8 mt-10 md:mt-0 font-mono">Meet Our Amazing Team</h1>
+            <div class="flex flex-col items-center justify-top min-h-screen bg-gray-200 px-4 pb-8">
+            <h1 class="text-6xl font-bold text-gray-700 mb-8 mt-10">Meet Our Amazing Team!</h1>
             <div class="flex flex-col space-y-6 sm:flex-row sm:space-x-6 sm:space-y-0 w-full max-w-6xl">
                 <div class="w-full overflow-hidden rounded-lg bg-white shadow-md duration-300 hover:scale-105 hover:shadow-xl">
                     <div class="flex justify-center mt-6">

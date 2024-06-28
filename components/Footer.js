@@ -1,4 +1,4 @@
-import { FaFacebook, FaTwitter, FaInstagram} from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaDiscord, FaFacebook, FaLinkedin} from 'react-icons/fa';
 import Link from 'next/link';
 import styles from "@/styles/footer.module.css"
 
@@ -21,14 +21,17 @@ export default function Footer() {
         <div className="space-y-4">
           <h2 className="text-lg font-bold">Follow Us</h2>
           <div className="flex space-x-3">
-            <a className={styles.text} href="https://facebook.com" target="_blank"><FaFacebook /></a>
-            <a className={styles.text} href="https://twitter.com" target="_blank"><FaTwitter /></a>
-            <a className={styles.text} href="https://instagram.com" target="_blank"><FaInstagram /></a>
+            <a className={styles.text} href="https://www.instagram.com/seneca_sdc/" target="_blank"><FaInstagram /></a>
+            <a className={styles.text} href="https://www.facebook.com/campusgroups" target='_blank'><FaFacebook /></a>
+            <a className={styles.text} href="https://twitter.com/campusgroups" target="_blank"><FaTwitter /></a>
+            <a className={styles.text} href="https://www.linkedin.com/company/seneca-software-developers-club/" target="_blank"><FaLinkedin /></a>
+            <a className={styles.text} href="https://discord.com/invite/6jYfqqUtXn" target="_blank"><FaDiscord /></a>
           </div>
         </div>
       </div>
       <div className="mt-10 border-t pt-10 text-center">
         <p>© {new Date().getFullYear()} Seneca Software Development Club</p>
+        <a target="_blank" className="hover:underline text-slate-300" href="https://www.campusgroups.com/terms?view=privacy">Privacy Policy</a>
       </div>
     </footer>
   );

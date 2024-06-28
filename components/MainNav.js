@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 import styles from "@/styles/mainNav.module.css"
 import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <>
@@ -18,22 +20,22 @@ export default function Navbar() {
                 src='/logo.png'
                 width="150"
                 height="150"
-                className="text-lg text-black p-4 hover:text-red-700 rounded cursor-pointer" 
+                className="text-lg text-black p-4 hover:text-red-700 transition-colors duration-200 rounded cursor-pointer" 
               />
             </a>
             </div>
             <div className="hidden md:block">
               <div className="text-sm text-white ml-10 space-x-6">
-                <Link legacyBehavior href="/"><a className={styles.link}>HOME</a></Link>
-                <Link legacyBehavior href="/about"><a className={styles.link}>ABOUT US</a></Link>
-                <Link legacyBehavior href="/leadership"><a className={styles.link}>LEADERSHIP TEAM</a></Link>
-                <Link legacyBehavior href="/events"><a className={styles.link}>EVENTS</a></Link>
-                <Link legacyBehavior href="/contact"><a className={styles.link}>CONTACT US</a></Link>
+                <Link legacyBehavior href="/"><a className={router.pathname === '/' ? styles.activeLink : styles.link}>Home</a></Link>
+                <Link legacyBehavior href="/about"><a className={router.pathname === '/about' ? styles.activeLink : styles.link}>About us</a></Link>
+                <Link legacyBehavior href="/leadership"><a className={router.pathname === '/leadership' ? styles.activeLink : styles.link}>Leadership team</a></Link>
+                <Link legacyBehavior href="/events"><a className={router.pathname === '/events' ? styles.activeLink : styles.link}>Events</a></Link>
+                <Link legacyBehavior href="/contact"><a className={router.pathname === '/contact' ? styles.activeLink : styles.link}>Contact us</a></Link>
               </div>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-black-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+            <button onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-black-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition-colors duration-200">
               {!isOpen ? (
                 <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -51,19 +53,19 @@ export default function Navbar() {
       {isOpen && (
         <div className="text-white md:hidden">
           <div className="px-8 pt-2 pb-3 space-y-1 sm:px-15 text-sm">
-              <Link href='/' legacyBehavior><a className={styles.link}>HOME</a></Link>
+              <Link href='/' legacyBehavior><a className={router.pathname === '/' ? styles.activeLink : styles.link}>Home</a></Link>
             </div>
             <div className="px-8 pt-2 pb-3 space-y-1 sm:px-15 text-sm">
-              <Link href='/about' legacyBehavior><a className={styles.link}>ABOUT US</a></Link>
+              <Link href='/about' legacyBehavior><a className={router.pathname === '/about' ? styles.activeLink : styles.link}>About us</a></Link>
             </div>
             <div className="px-8 pt-2 pb-3 space-y-1 sm:px-15 text-sm">
-              <Link legacyBehavior href="/leadership"><a className={styles.link}>LEADERSHIP TEAM</a></Link>
+              <Link legacyBehavior href="/leadership"><a className={router.pathname === '/leadership' ? styles.activeLink : styles.link}>Leadership team</a></Link>
             </div>
             <div className="px-8 pt-2 pb-3 space-y-1 sm:px-15 text-sm">
-              <Link legacyBehavior href="/events"><a className={styles.link}>EVENTS TEAM</a></Link>
+              <Link legacyBehavior href="/events"><a className={router.pathname === '/events' ? styles.activeLink : styles.link}>Events</a></Link>
             </div>
             <div className="px-8 pt-2 pb-3 space-y-1 sm:px-15 text-sm">
-              <Link href='/contact' legacyBehavior><a className={styles.link}>CONTACT US</a></Link>
+              <Link href='/contact' legacyBehavior><a className={router.pathname === '/contact' ? styles.activeLink : styles.link}>Contact us</a></Link>
             </div>
         </div>
       )}
