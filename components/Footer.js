@@ -4,7 +4,7 @@ import styles from "@/styles/footer.module.css"
 
 export default function Footer() {
   return (
-    <footer className="bg-red-900 text-white py-10 px-10">
+    <footer className="bg-black text-white py-10 px-10">
       <div className="flex flex-col md:flex-row justify-between">
         <div className="space-y-4 mb-10 md:mb-0">
           <h2 className="text-lg font-bold">SSDC</h2> 

@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <>
-    <nav className="bg-red-800" style={{position:"sticky", top: 0, zIndex: 10000}}>
+    <nav className="bg-black" style={{position:"sticky", top: 0, zIndex: 10000}}>
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -22,10 +22,10 @@ export default function Navbar() {
               <Link legacyBehavior href="/">
                 <a onClick={closeMenu}>
                   <Image
-                    src='/logo.png'
-                    width="150"
-                    height="150"
-                    className="text-lg text-black p-4 hover:text-red-700 transition-colors duration-200 rounded cursor-pointer" 
+                    src='/Logo.png'
+                    width="180"
+                    height="180"
+                    className="cursor-pointer" 
                   />
                 </a>
               </Link>
@@ -41,7 +41,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-black-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition-colors duration-200">
+            <button onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-red-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white transition-colors duration-200">
               {!isOpen ? (
                 <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />

@@ -3,35 +3,21 @@ import Link from 'next/link';
 import styles from "@/styles/index.module.css"
 
 export default function Home() {
-  const phrase = `Hello Friend! Looks like you found my secret hideout! Do you want to enhance your coding skills?, collaborate on exciting projects?, and be part of a vibrant community? Then what are you waiting for? Join the Seneca Software Development Club Today! `;
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => prevIndex < phrase.length ? prevIndex + 1 : prevIndex);
-    }, 50); //set each letter after each interval
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
-    <div className="relative flex flex-col items-center justify-top min-h-screen">
+    <div className="relative flex flex-col items-center justify-center min-h-screen text-center">
         <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center" style={{backgroundImage: "url('seneca.jpg')", filter: "blur(20px)"}}></div>
-        <div className="relative z-10 mt-24 text-4xl md:text-6xl mb-20">
-          <picture>
-            <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f913/512.webp" type="image/webp"/>
-            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f913/512.gif" alt="🤓" width="200" height="250" className="w-200 h-250 md:w-400 md:h-500"/>
-          </picture>
-        </div>
-        <div className="relative z-10 font-mono text-3xl md:text-5xl flex flex-col items-center">
-          <div className="text-white font-bold text-center">
-              {phrase.slice(0, index)}
-          </div>
-          {index === phrase.length && (
-            <Link legacyBehavior href="/about">
-              <a className={styles.link}>Learn more...</a>
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
+        <div className="z-10 p-4">
+            <h1 className="text-6xl text-white font-bold mb-4"><span className="text-red-800">SSDC</span> - Seneca Software Development Club</h1>
+            <picture className="inline-block">
+              <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f916/512.webp" type="image/webp" />
+              <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f916/512.gif" alt="🤖" width="100" height="100" />
+            </picture>
+            <p className="text-2xl text-white font-bold mb-4">Learn, Grow, and Contribute.</p>
+            <Link legacyBehavior href="https://clubs.ssfinc.ca/SSDC/club_signup">
+                <a target="_blank"  className="inline-block px-8 py-4 text-2xl text-white bg-red-900 rounded-full hover:bg-red-600 transition duration-200 transform hover:scale-105">Join Today</a>
             </Link>
-          )}
         </div>
     </div>
   );
