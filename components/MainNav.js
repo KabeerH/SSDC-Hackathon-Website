@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from "@/styles/mainNav.module.css"
-import Image from 'next/image';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,12 +20,7 @@ export default function Navbar() {
             <div>
               <Link legacyBehavior href="/">
                 <a onClick={closeMenu}>
-                  <Image
-                    src='/Logo.png'
-                    width="180"
-                    height="180"
-                    className="cursor-pointer" 
-                  />
+                  <img src="Logo.png" width={180} height={180} className="cursor-pointer"></img>
                 </a>
               </Link>
             </div>
